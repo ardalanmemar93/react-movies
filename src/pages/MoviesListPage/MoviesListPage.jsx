@@ -1,11 +1,15 @@
-import React from 'react'
-import {Link} from 'react-router-dom';
+import MovieCard from "../../components/MovieCard/MovieCard"
+import './MovieListPage.css'
 
-export default function MoviesListPage() {
+
+export default function MovieListPage(props) {
   return (
-    <>
-    <h1>MoviesListPage</h1>
-    <Link to="/movies/:movieName">MovieDetailPage</Link>
-    </>
+    <div className="container">
+      {
+        props.movies.map(movie => {
+          return <MovieCard key={movie.title} movie={movie} />
+        })
+      }
+    </div>
   )
 }
