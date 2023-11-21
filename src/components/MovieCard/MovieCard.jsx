@@ -1,19 +1,27 @@
-import React from 'react'
-import {Link} from 'react-router-dom';
-
+import React from 'react';
+import { Link } from 'react-router-dom';
+import 'materialize-css/dist/css/materialize.min.css'; 
 
 
 export default function MovieCard(props) {
-    return (
-      <>
-        <Link to={`/movies/${props.movie.title}`} className="movie-link">
-          <div style={{"background": `url(${props.movie.posterPath}) no-repeat center center`, "WebkitBackgroundSize": "cover"}} className="item-card">
-            <div className="title">
-              <h1>{props.movie.title}</h1>
-              <h4>Released: {props.movie.releaseDate}</h4>
-            </div>
+  return (
+    <div className="col s12 m6 l4">
+      
+      <Link to={`/movies/${props.movie.title}`} className="movie-link">
+        <div
+          style={{
+            background: `url(${props.movie.posterPath}) no-repeat center center`,
+            WebkitBackgroundSize: 'cover',
+          }}
+          className="item-card z-depth-2 hoverable"
+        >
+          <div className="card-content white-text">
+            <span className="card-title">{props.movie.title}</span>
+            <p>Released: {props.movie.releaseDate}</p>
           </div>
-        </Link>
-      </>
-    );
-  }
+        </div>
+      </Link>
+    </div>
+  );
+}
+

@@ -1,13 +1,17 @@
 import React from 'react'
 import {Link} from 'react-router-dom';
+import './NavBar.css'
 
-export default function NavBar({user}) {
+export default function NavBar({ user }) {
   return (
-    <nav>
-        <h1>{user} Wanna Watch Something Spooky? </h1>
-        <Link to="/">Movies</Link>
-        &nbsp;&nbsp;|&nbsp;&nbsp;
-        <Link to="/Actors">Actors</Link>
-    </nav>
-  )
+    <div className="flex-container">
+      <Link className="flex-item" to="/">
+        <button className="btn fourth">Movies</button>
+      </Link>
+      <Link className="flex-item" to="/actors">
+        <button className="btn fourth">Actors</button>
+      </Link>
+      <p className="flex-item">Welcome, {user}!</p>
+    </div>
+  );
 }
