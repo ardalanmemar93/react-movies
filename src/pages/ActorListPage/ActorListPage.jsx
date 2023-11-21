@@ -1,4 +1,5 @@
-// import "./ActorPage.css";
+// ActorListPage.jsx
+import React from "react";
 import ActorCard from "../../components/ActorCard/ActorCard";
 import "materialize-css/dist/css/materialize.min.css";
 
@@ -10,7 +11,6 @@ export default function ActorListPage({ movies }) {
     return actors;
   }, []);
 
-  
   return (
     <div className="container">
       <ul className="collection">
